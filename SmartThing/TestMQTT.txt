@@ -1,0 +1,38 @@
+unsigned long startTime = 0;
+unsigned long endTime = 0;
+
+void setup() {
+  Serial.begin(115200);
+
+  wifiManager.connect();
+
+  wiFiClient.setCACert(AMAZON_ROOT_CA1);
+  wiFiClient.setCertificate(CERTIFICATE);
+  wiFiClient.setPrivateKey(PRIVATE_KEY);
+
+  mqttClient.setServer(MQTT_BROKER, MQTT_PORT);
+}
+
+void loop() {
+
+  // Medir inicio
+  startTime = millis();
+
+  // Conexión MQTT
+  mqttClient.reconnect();
+
+  // Medir final
+  endTime = millis();
+
+  // Imprimir tiempo total de conexión MQTT
+  Serial.println(endTime - startTime);
+
+  // Espera breve antes de desconectar
+  delay(500);
+
+  // Desactivar conexión
+  mqttClient.disconnect();
+
+  // Otra espera para estabilizar pruebas
+  delay(500);
+}
