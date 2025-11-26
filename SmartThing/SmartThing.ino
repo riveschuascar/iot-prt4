@@ -9,14 +9,14 @@
 #define GAS_SENSOR_PIN 34
 #define SERVO_PIN 25
 
-const char* WIFI_SSID = "TIGO RIVERO";
-const char* WIFI_PASS = "a36bb1e335c28";
-const char* MQTT_BROKER = "a1n3h8klbo6gqj-ats.iot.us-west-1.amazonaws.com";
+const char* WIFI_SSID = "";
+const char* WIFI_PASS = "";
+const char* MQTT_BROKER = "iot.us-west-1.amazonaws.com";
 const int MQTT_PORT = 8883;
 const char* CLIENT_ID = "ESmarthP-32";
 
-const char* UPDATE_TOPIC = "$aws/things/esp32-maqueta/shadow/update";
-const char* UPDATE_DELTA_TOPIC = "$aws/things/esp32-maqueta/shadow/update/delta";
+const char* UPDATE_TOPIC = "$aws/things/esp32/shadow/update";
+const char* UPDATE_DELTA_TOPIC = "$aws/things/esp32/shadow/update/delta";
 
 const char AMAZON_ROOT_CA1[] PROGMEM = R"EOF(
 -----BEGIN CERTIFICATE-----
