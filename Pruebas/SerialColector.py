@@ -10,6 +10,7 @@ TIMEOUT = 1
 TXT_FILE = "Resultados/datos_serial.txt"
 
 def main():
+    '''Función principal para capturar datos del puerto serial y guardarlos en un archivo de texto.'''
     try:
         ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=TIMEOUT)
         print(f"Conectado al puerto {SERIAL_PORT} ({BAUD_RATE} bps)")
